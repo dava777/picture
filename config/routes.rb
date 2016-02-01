@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  # get 'sessions/new'
+
+  root 'items#index'
+
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :items do
+    get 'upvote', on: :member
+  end
+
+  get '/user/delete', to: 'users#destroy'
+  get '/user/edit', to: 'users#edit'
+  get '/login', to: 'sessions#new'
+  get '/logout', to: 'sessions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
