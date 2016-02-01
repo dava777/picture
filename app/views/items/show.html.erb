@@ -1,0 +1,8 @@
+<h1><%= @item.name %></h1>
+<%= link_to 'Show all', items_path %>
+<ul>
+  <li>Price: <%= @item.price %> сом</li>
+  <li>Description: <%= @item.description %></li>
+  <li>Weight: <%= @item.weight %> kg</li>
+  <li><%= image_tag @item.avatar.to_s, size: '200x200' %></li>
+</ul>

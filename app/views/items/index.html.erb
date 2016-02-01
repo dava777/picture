@@ -1,0 +1,17 @@
+<h2><b>All items</b></h2>
+<%= link_to 'Create', new_item_path %>
+
+<% @items.each do |item| %>
+    <h3><%= item.name %></h3>
+    <%= link_to 'View', item_path(item.id) %>
+    <%= link_to 'Edit', edit_item_path(item.id) %>
+    <%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete %>
+
+    <ul>
+      <li>Id: <%= item.id %></li>
+      <li>Price: <%= item.price %> сом</li>
+      <li>Description: <%= item.description %></li>
+      <li>Weight: <%= item.weight %> kg</li>
+      <li>Rating: <%= item.votes_count %>, <%= link_to '+', upvote_item_path(item) %></li>
+    </ul>
+<% end %>

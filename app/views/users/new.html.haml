@@ -1,0 +1,7 @@
+%h1 Create new user
+= form_for @user do |u|
+    %div= u.email_field    :email
+    %div= u.password_field :password
+    %div= u.password_field :password_confirmation
+    %div= u.submit 'Create'
+

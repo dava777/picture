@@ -1,0 +1,10 @@
+%h1 Edit item
+%p= link_to 'Show all', root_path
+=form_for @item do |f|
+  %p= f.text_field :name, placeholder: 'Enter name'
+  %p= f.text_field :price, placeholder: 'Enter price'
+  %p= f.text_field :description, placeholder: 'Enter description'
+  %p= f.text_field :weight, placeholder: 'Enter weight'
+  %p= f.file_field :avatar, :multiple => true
+  %p= f.hidden_field :real, value: '1'
+  %p= f.submit 'Save'

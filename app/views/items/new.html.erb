@@ -1,0 +1,10 @@
+<h1>Create new item</h1>
+<%= form_for @item, :html => {:multipart => true} do |f| %>
+    <p><%= f.text_field :name, placeholder: 'Enter name' %></p>
+    <p><%= f.text_field :price, placeholder: 'Enter price' %></p>
+    <p><%= f.text_field :description, placeholder: 'Enter description' %></p>
+    <p><%= f.text_field :weight, placeholder: 'Enter weight' %></p>
+    <p><%= f.file_field :avatar %></p>
+    <p><%= f.hidden_field :real, value: '1' %></p>
+    <p><%= f.submit 'Send' %></p>
+<% end %>

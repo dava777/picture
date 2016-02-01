@@ -1,0 +1,16 @@
+!!!
+%html
+%head
+%title AdsBoard
+= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+= javascript_include_tag 'application', 'data-turbolinks-track' => true
+= csrf_meta_tags
+%body
+  - if current_user.present?
+    = link_to 'Sign out', logout_path
+    = link_to 'Edit profile', user_edit_path
+    = link_to 'Delete your profile', user_delete_path, confirm: 'Are you sure?'
+  - else
+    = link_to 'Register', new_user_path
+    = link_to 'Sign in', login_path
+\#{yield}
